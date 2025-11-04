@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infinite Marquee Design</title>
+	<base href="https://cdn.jsdelivr.net/gh/unseenumair/assets/icons/">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap">
+	<style>
+		:root{
+			--bodyBg: black;
+			--textCol: white;
+			--marqueeBord: 1px solid blue;
+			--gap: 2rem;	
+		}
+		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html,
+		body{
+			width: 100%;
+			height: 100%;
+			padding: 7%;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: var(--gap);	
+			background: var(--bodyBg);
+			color: var(--textCol);
+			user-select: none;
+		}
+
+		h1{
+			font-family: "QuickSand", sans-serif;
+			letter-spacing: 1px;
+			font-size: 2.3rem;
+		}
+
+		#marquee{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: var(--gap);
+			border-block: var(--marqueeBord);
+			padding-block: 15px;			
+		}
+
+		#marquee ul{
+			list-style: none;
+			display: flex;
+			align-items: center;
+			gap: var(--gap);
+			animation: move 7s linear 0s infinite;
+		}
+
+		#marquee:hover ul{
+			animation-play-state: paused;
+		}
+
+		@keyframes move{
+			to{
+				transform: translateX(calc(-100% - var(--gap)));
+			}
+		}
+		
+		img{
+			display: block;
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Infinite Marquee</h1>
+	<div id="marquee">
+		<ul>
+			<li><img src="html.svg" alt="HTML"></li>
+			<li><img src="css.svg" alt="CSS"></li>
+			<li><img src="js.svg" alt="JS"></li>
+			<li><img src="reactjs.svg" alt="ReactJS"></li>
+			<li><img src="tailwindcss.svg" alt="Tailwind CSS"></li>
+			<li><img src="nodejs.svg" alt="NodeJS"></li>
+			<li><img src="expressjs.svg" alt="ExpressJS"></li>
+			<li><img src="mongodb.svg" alt="MongoDB"></li>
+		</ul>
+		<ul aria-hidden="true">
+			<li><img src="html.svg" alt="HTML"></li>
+			<li><img src="css.svg" alt="CSS"></li>
+			<li><img src="js.svg" alt="JS"></li>
+			<li><img src="reactjs.svg" alt="ReactJS"></li>
+			<li><img src="tailwindcss.svg" alt="Tailwind CSS"></li>
+			<li><img src="nodejs.svg" alt="NodeJS"></li>
+			<li><img src="expressjs.svg" alt="ExpressJS"></li>
+			<li><img src="mongodb.svg" alt="MongoDB"></li>
+		</ul>
+		<ul aria-hidden="true">
+			<li><img src="html.svg" alt="HTML"></li>
+			<li><img src="css.svg" alt="CSS"></li>
+			<li><img src="js.svg" alt="JS"></li>
+			<li><img src="reactjs.svg" alt="ReactJS"></li>
+			<li><img src="tailwindcss.svg" alt="Tailwind CSS"></li>
+			<li><img src="nodejs.svg" alt="NodeJS"></li>
+			<li><img src="expressjs.svg" alt="ExpressJS"></li>
+			<li><img src="mongodb.svg" alt="MongoDB"></li>
+		</ul>
+                <ul aria-hidden="true">
+			<li><img src="html.svg" alt="HTML"></li>
+			<li><img src="css.svg" alt="CSS"></li>
+			<li><img src="js.svg" alt="JS"></li>
+			<li><img src="reactjs.svg" alt="ReactJS"></li>
+			<li><img src="tailwindcss.svg" alt="Tailwind CSS"></li>
+			<li><img src="nodejs.svg" alt="NodeJS"></li>
+			<li><img src="expressjs.svg" alt="ExpressJS"></li>
+			<li><img src="mongodb.svg" alt="MongoDB"></li>
+		</ul>
+	</div>
+</body>
+</html>

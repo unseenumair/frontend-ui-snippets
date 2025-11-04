@@ -1,0 +1,101 @@
+:root{
+	/* --bodyBg: rgba(230, 230, 213, 40%); */
+	--bodyBg: black;
+	--textCol: black;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body{
+	width: 100%;
+	height: 100%;
+	background: var(--bodyBg);
+	color: var(--textCol);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-family: "Poppins", sans-serif;
+}
+
+#icons{
+	width: 100%;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	gap: clamp(7px, 2%, 15px);
+}
+
+#icons a{
+	display: grid;
+	grid-template-columns: auto 1fr;
+	place-items: center; 
+	gap: clamp(7px, 2%, 15px);
+	text-decoration: none;
+	color: var(--textCol);
+	overflow: hidden; 
+	border: 0;
+	border-radius: 50px;
+	width: 60px; 
+	height: 60px;
+	transition: all 0.3s ease-out 0s;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+	background: white;
+}
+
+#icons a:focus,
+#icons a:focus-visible{
+	outline: 0;
+	border: 0;
+}
+
+#icons a:hover,
+#icons a:focus,
+#icons a:focus-visible{ 
+	width: 200px; 
+}
+
+a:hover .icon,
+a:focus .icon{
+	color: white;
+	background: black;
+}
+
+a:hover #linkedin,
+a:focus #linkedin{ 
+	background: royalblue;
+}
+a:hover #linkedin ~ span,
+a:focus #linkedin ~ span{ 
+	color: royalblue;
+}
+
+a:hover #youtube,
+a:focus #youtube{ 
+	background: darkred;
+}
+a:hover #youtube ~ span,
+a:focus #youtube ~ span{ 
+	color: darkred;
+}
+
+.icon{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	font-size: 40px;
+	border: 0;
+	border-radius: 50%;
+}
+
+a span{
+	font-size: 1.1rem;
+	transform: translateY(1px);
+}
