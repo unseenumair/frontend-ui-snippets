@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bouncing Ball</title>
+	<link rel="icon" href="https://cdn.jsdelivr.net/gh/unseenumair/assets/icons/css.svg">
+	<!-- CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+	<!-- CSS -->
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			background: #e6e5e5ef;
+		}
+		
+		#ball {
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			background: royalblue;
+			position: absolute;
+			animation: animateX 3s linear infinite, animateY 1s ease-out infinite alternate;
+		}
+
+		@keyframes animateX {
+			from {
+				left: 0;
+			}
+			to {
+				left: 100%;
+			}
+		}
+
+		@keyframes animateY {
+			from {
+				top: 0;
+			}
+			to {
+				top: 100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="ball"><div>
+</body>
+</html>
