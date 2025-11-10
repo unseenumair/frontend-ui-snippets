@@ -1,0 +1,89 @@
+:root{
+	--bodyBg: #f2eeee; 
+	--textCol: black;
+
+	--shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	--iconBg: white;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body{
+	width: 100%;
+	height: 100%;
+	background: var(--bodyBg);
+	color: var(--textCol);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-family: "Poppins", sans-serif;
+}
+
+section{
+	width: 100%;
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	flex-flow: row wrap;
+	gap: clamp(7px, 2%, 15px);
+}
+
+.link { position: relative; }
+
+a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	width: 60px;
+	height: 60px;
+	border: 0;
+	border-radius: 50%;
+	transition: all 0.4s ease 0s;
+	box-shadow: var(--shadow);
+	background: var(--iconBg);
+	color: var(--textCol);
+	font-size: clamp(30px, 2.5rem, 40px);
+}
+
+a:focus,
+a:focus-visible,
+a:hover {
+	outline: 0;
+	border: 0;
+	transform: scale(1.1);
+	filter: invert(1);
+}
+
+.tooltip {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute; 
+	top: -80px; 
+	left: -20px;
+	background: var(--textCol); 
+	width: 100px;
+	height: 60px;
+	opacity: 0; 
+	transition: opacity 0.3s ease-in 0s;
+	clip-path: url("#tip-icon"); 
+	-webkit-clip-path: url("#tip-icon"); 
+}
+
+.link:hover .tooltip { 
+	opacity: 1; 
+} 
+
+mark {
+	position: relative;
+	top: -7px;
+	background: transparent;
+	color: white;
+}

@@ -1,7 +1,9 @@
 :root{
-	/* --bodyBg: rgba(230, 230, 213, 40%); */
-	--bodyBg: black;
+	--bodyBg: #f2eeee; 
 	--textCol: black;
+
+	--shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	--iconBg: white;
 }
 
 *{
@@ -28,12 +30,13 @@ body{
 	display: flex;
 	justify-content: center; 
 	align-items: center;
+	flex-flow: row wrap;
 	gap: clamp(7px, 2%, 15px);
 }
 
 #icons a{
-	display: grid;
-	grid-template-columns: auto 1fr;
+	display: grid; 
+	grid-template-columns: auto 1fr; 
 	place-items: center; 
 	gap: clamp(7px, 2%, 15px);
 	text-decoration: none;
@@ -44,8 +47,8 @@ body{
 	width: 60px; 
 	height: 60px;
 	transition: all 0.3s ease-out 0s;
-	box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-	background: white;
+	box-shadow: var(--shadow);
+	background: var(--iconBg);
 }
 
 #icons a:focus,
@@ -87,10 +90,10 @@ a:focus #youtube ~ span{
 .icon{
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; 
 	width: 60px;
 	height: 60px;
-	font-size: 40px;
+	font-size: 2.5rem;
 	border: 0;
 	border-radius: 50%;
 }
