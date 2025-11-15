@@ -13,7 +13,7 @@
 	<!-- Font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap">
 </head>
-<body>
+<body class="lightMode">
 	<header>
 		<div id="logo">
 			<img src="/assets/logo.webp" alt="Logo" width="50" height="50">
@@ -35,13 +35,16 @@
 			<li><a href="https://www.dev.to/unseenumair/" rel="noopener noreferrer"><iconify-icon icon="lineicons:dev" width="30" height="30"></iconify-icon></a></li>
 		<ul>
 	</header>
-	<div id="hamburger">
-		<iconify-icon icon="ion:menu" width="30" height="30"></iconify-icon>
+	<div id="hamburger" class="toggleIcons">
+		<iconify-icon icon="garden:menu-fill-16"></iconify-icon>
 	</div>
-	<div id="cross">
-		<iconify-icon icon="charm:cross" width="30" height="30"></iconify-icon>
+	<div id="cross" class="toggleIcons">
+		<iconify-icon icon="charm:cross"></iconify-icon>
 	</div>
-	<button><span>ChangeMode</span> <iconify-icon icon="mdi:circle-arrows" width="24" height="24"></iconify-icon></button>
+	<button id="toggleMode" class="toggleIcons">
+		<iconify-icon id="sun" icon="si:sun-fill"></iconify-icon>
+		<iconify-icon id="moon" icon="bi:moon-stars-fill"></iconify-icon>
+	</button>
 	<!-- JS -->
 	<script src="/script.js"></script>
 </body>

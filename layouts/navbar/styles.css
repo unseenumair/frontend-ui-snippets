@@ -1,7 +1,3 @@
-:root {
-	--buttonShadowCol: white;
-}
-
 /* Modes */
 
 .lightMode {
@@ -10,8 +6,9 @@
 	--headerBg: black;
 	--hamburgerCol: black;
 	--hamburgerBg: white;
-	--buttonIconCol: white;
-	--buttonShadowCol: black;
+	--toggleIconsCol: white;
+	--toggleIconsBg: black;
+	--toggleIconsShadow: 0 0 20px black;
 }
 
 .darkMode {
@@ -19,35 +16,9 @@
 	--textCol: black;
 	--headerBg: #fdfdfdef;
 	--hamburgerCol: white;
-	--hamburgerBg: black;
-	--buttonIconCol: black;
-}
-
-.blueMode {
-	--bodyBg: linear-gradient(-45deg, royalblue, black);
-	--textCol: white;
-	--headerBg: linear-gradient(45deg, royalblue, black);
-	--hamburgerCol: white;
-	--hamburgerBg: black;
-	--buttonIconCol: skyblue;
-}
-
-.redMode {
-	--bodyBg: linear-gradient(-45deg, red, black);
-	--textCol: white;
-	--headerBg: linear-gradient(45deg, red, black);
-	--hamburgerBg: black;
-	--hamburgerCol: white;
-	--buttonIconCol: red;
-}
-
-.greenMode {
-	--bodyBg: linear-gradient(-45deg, green, black);
-	--textCol: white;
-	--headerBg: linear-gradient(45deg, green, black);
-	--hamburgerBg: black;
-	--hamburgerCol: white;
-	--buttonIconCol: lightgreen;
+	--toggleIconsCol: black;
+	--toggleIconsBg: white;
+	--toggleIconsShadow: 0 0 30px white;
 }
 
 /* Styling Starts Here */
@@ -56,17 +27,17 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	transition: background 0.5s ease 0.05s;
 }
 
 html,
 body {
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow: hidden; 
 	background: var(--bodyBg);
 	color: var(--textCol);
 	font-family: "QuickSand", sans-serif;
+	transition: background 0.5s ease 0.01s;
 }
 
 /* Header */
@@ -176,20 +147,21 @@ nav a {
 }
 
 
-/* HamBurger */
-#hamburger,
-#cross {
-	position: absolute;
-	color: var(--hamburgerCol);
-	background: var(--hamburgerBg);
-	border: 1px solid var(--hamburgerCol);
-	border-radius: 50%;
-	padding: 5px;
+/* ToggleIcons */
+.toggleIcons {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	box-shadow: 0 0 20px var(--hamburgerCol);
+	padding: 0.5rem;
+	position: absolute;
+	background: var(--headerBg); 
+	color: var(--headerCol);
+	box-shadow: var(--toggleIconsShadow);
+	transition: all 0.5s ease 0.05s;
+	border: 0;
+	border-radius: 50%;
+	font-size: clamp(20px, 1.5rem, 25px);
 }
 
 #hamburger {
@@ -198,37 +170,19 @@ nav a {
 }
 
 #cross {
-	display: none; 
+	display: none;
 	top: 3%;
 	right: 4%;
 }
 
-button {
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 2%;
-	position: absolute;
-	bottom: 2%;
-	right: 3%;
-	padding: 20px 25px;
-	border: 0;
-	border-radius: 15px;
-	color: black;
-	background: var(--headerBg); 
-	color: var(--headerCol);
-	box-shadow: 0 0 20px var(--buttonShadowCol);
-	transition: all 0.5s ease 0.05s;
+#toggleMode {
+	top: 3%;
+	right: 4%;
 }
 
-button span {
-	font-size: 1rem;
-	letter-spacing: 0.5px;
-	font-weight: bold;
-}
+#sun { display: block; }
+#moon { display: none; }
 
-button iconify-icon { color: var(--buttonIconCol); }
 
 @media only screen and (orientation: portrait){
 	header {

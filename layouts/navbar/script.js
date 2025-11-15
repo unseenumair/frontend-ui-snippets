@@ -1,5 +1,3 @@
-console.log("I am working...");
-
 const menu = document.querySelector("#hamburger");
 const header = document.querySelector("header");
 const cross = document.querySelector("#cross");
@@ -8,7 +6,7 @@ const button = document.querySelector("button");
 menu.addEventListener("click", ()=>{
 	menu.style.display = "none";
 	header.style.transform = "translateX(0)";
-	button.style.opacity = "0";
+	button.style.display = "none";
 	cross.style.display = "flex";
 });
 
@@ -16,37 +14,47 @@ cross.addEventListener("click", ()=>{
 	cross.style.display = "none";
 	header.style.transform = "translateX(-1000px)";
 	menu.style.display = "flex";
-	button.style.opacity = "1";
+	button.style.display = "flex";
 });
 
-// Modes Changing & Local Storage
+// Toogle Mode
 
-let cName = ["lightMode"];
-document.body.className = cName[0];
+const sun = document.querySelector("#sun");
+const moon = document.querySelector("#moon");
+let mode, lastMode;
 
-let turn = [0];
+lastMode = localStorage.getItem("lastMode");
+if (lastMode){
+	document.body.className = lastMode;
+	setIcon();
+}
 
-function changeMode(){
-	let modes = ["dark", "red", "blue", "green", "light"];
-	n = turn[0];
-
-	if (n < modes.length){
-		turn[0] += 1;
+function setIcon(){
+	mode = document.body.className;
+			
+	if (mode === "lightMode"){
+		moon.style.display = "none";
+		sun.style.display = "block";
 	}
 
 	else {
-		n = 0;
-		turn[0] = 0;
-	}
-
-	cName[0] = `${modes[n]}Mode`;
+		sun.style.display = "none";
+		moon.style.display = "block";
+	}	
+	
+	localStorage.setItem("lastMode", mode);
 }
 
-button.addEventListener("click", ()=>{
-	changeMode();
-	document.body.className = cName[0];
-	localStorage.setItem("lastMode", cName[0]);
-});
+document.querySelector("#toggleMode").addEventListener("click", ()=>{
+	mode = document.body.className;
+	
+	if (mode === "lightMode"){
+		document.body.className = "darkMode";
+	}
+	
+	else if (mode === "darkMode"){
+		document.body.className = "lightMode";
+	}
 
-let lastMode = localStorage.getItem("lastMode");
-document.body.className = lastMode;
+	setIcon();
+});
