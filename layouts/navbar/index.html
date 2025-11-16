@@ -46,6 +46,37 @@
 		<iconify-icon id="moon" icon="bi:moon-stars-fill"></iconify-icon>
 	</button>
 	<!-- JS -->
-	<script src="/script.js"></script>
+	<script>
+		const menu = document.querySelector("#hamburger");
+		const header = document.querySelector("header");
+		const cross = document.querySelector("#cross");
+		const button = document.querySelector("button");
+		
+		menu.addEventListener("click", ()=>{
+		    menu.style.display = "none";
+		    header.style.transform = "translateX(0)";
+		    button.style.display = "none";
+		    cross.style.display = "flex";
+		});
+		
+		cross.addEventListener("click", ()=>{
+		    cross.style.display = "none";
+		    header.style.transform = "translateX(-1000px)";
+		    menu.style.display = "flex";
+		    button.style.display = "flex";
+		});
+		
+		// Toogle Mode
+
+		let mode = localStorage.getItem("lastMode");
+		if (!(mode === undefined)){
+			document.body.className = mode;
+		}
+
+		document.querySelector("#toggleMode").addEventListener("click", ()=>{
+			document.body.classList.toggle("darkMode");
+			localStorage.setItem("lastMode", document.body.className);
+		});
+	</script>
 </body>
 </html>

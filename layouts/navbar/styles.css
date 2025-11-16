@@ -1,6 +1,4 @@
-/* Modes */
-
-.lightMode {
+:root {
 	--bodyBg: #fdfdfdef;
 	--textCol: white;
 	--headerBg: black;
@@ -183,6 +181,8 @@ nav a {
 #sun { display: block; }
 #moon { display: none; }
 
+.darkMode #sun { display: none; }
+.darkMode #moon { display: block; }
 
 @media only screen and (orientation: portrait){
 	header {
